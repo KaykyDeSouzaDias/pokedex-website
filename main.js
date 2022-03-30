@@ -9,7 +9,7 @@ function CloseSideNav() {
 }
 
 
-const getPokemonUrl = id => `https://pokeapi.co/api/v2/pokemon/${id}`;
+/*const getPokemonUrl = id => `https://pokeapi.co/api/v2/pokemon/${id}`;
 
 
 const createPokemonPromises = () => Array(150).fill().map((_, index) => fetch(getPokemonUrl(index + 1)).then(response => response.json()));
@@ -39,5 +39,5 @@ const insertPokemonsHTML = pokemons => {
 
 
 const pokemonPromises = createPokemonPromises();
-Promise.all(pokemonPromises).then(createPokemonsHTML).then(insertPokemonsHTML)
+Promise.all(pokemonPromises).then(createPokemonsHTML).then(insertPokemonsHTML)*/
 
