@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Raleway:wght@500;900&display=swap');
 
 
 * {
@@ -20,12 +20,33 @@ body{
 }
 
 
-.generation-title{
-    font-family: "Lato";
-    font-weight: 900;
-    font-size: 50px;
 
-    margin-top: 50px;
+
+
+
+.side-menu-container {
+    width: 400px;
+    height: 100%;
+
+    overflow-y: auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #141A1F;
+}
+
+
+
+
+.generation-title{
+    font-family: "century Gothic";
+    font-weight: 700;
+    font-size: 40px;
+
+    margin-top: 200px;
 
     align-self: center;
 
@@ -33,81 +54,134 @@ body{
 }
 
 
+.search-bar {
+    width: 80%;
+    height: 50px;
+
+    margin-top: 20px;
+    padding: 10px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    
+    border: none;
+    border-radius: 5px;
+
+    background-color: #292929;
+}
+.fa-magnifying-glass {
+    color: #6E6B6F;
+}
+.search-bar-input {
+    width: 100%;
+
+    margin-left: 10px;
+
+    border: none;
+
+    color: white;
+    background: none;
+}
+.search-bar-input:focus {
+    outline: none;
+    background: none;
+}
+
+.side-menu-container::-webkit-scrollbar {
+    width: 7px;
+}
+.side-menu-container::-webkit-scrollbar-thumb {
+    background: #6E6B6F; 
+    border-radius: 10px;
+}
+.side-menu-container::-webkit-scrollbar-thumb:hover {
+    background: #7f7d80; 
+}
+
+
 .pokedex{
     width: 100%;
     height: 100%;
+
+    position: relative;
 }
 
 .pokedex-container{
-    width: 100%;
-    height: 100%;
-    
-    margin-top: 100px;
+    margin-top: 50px;
 
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    padding-inline-start: 0;
+    display: flow-root;
+
+    list-style: none;
 }
 
 .pokemon-card{
-    width: 300px;
-    height: 400px;
+    width: 100%;
+    height: 150px;
 
     list-style: none;
 
-    margin: 20px;
-
-    position: relative;
-
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
 
-    border: none;
-    border-radius: 30px;
-
-    background-color: #E74C3C;
+    background-color: #141A1F;
 }
-.pokemon-card-image{
-    width: 300px;
-    height: 300px;
+.card-image{
+    width: 70px;
+    height: 70px;
 
-    position: absolute;
-    z-index: 1;
-
-    transition: 0.3s ease;
-}
-.pokemon-card-background{
-    width: 250px;
-    height: 250px;
-
-    position: absolute;
-    top: 20px;
-
-    opacity: 0.3;
+    margin-left: 20px;
 }
 
-.pokemon-card-title{
-    font-family: "Lato";
+.card-content {
+    margin-left: 20px;
+}
+
+.card-id{
+    font-family: "Poppins";
+    font-weight: 400;
+    font-size: 15px;
+
+    margin-bottom: 10px;
+
+    color: #E9E9E9;
+}
+.card-name{
+    font-family: "Raleway";
     font-weight: 900;
-    font-size: 40px;
+    font-size: 20px;
 
-    margin-top: 10px;
-
-    position: absolute;
-    bottom: 50px;
+    text-transform: uppercase;
 
     color: white;
 }
-.pokemon-card-subtitle{
-    font-family: "Lato";
-    font-weight: 700;
-    font-size: 20px;
 
-    position: absolute;
-    bottom: 20px;
+.card-type {
+    display: flex;
+    flex-direction: row;
+}
+.type-icon{
+    width: 25px;
+    height: 25px;
 
-    color: yellow;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 10px;
+
+    border-radius: 50px;
+}
+.type-image {
+    width: 15px;
+    height: 15px;
+}
+
+.pokemon-card-divider{
+    border: 0;
+    border-top: 5px solid #231D23;
 }
 

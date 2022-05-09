@@ -12,25 +12,32 @@
 <body>
 
 
+
+    <!-- SIDE NAV SECTION -->
+
     <div id="my-side-nav" class="side-nav">
 
-        <a href="" id="close-side-nav" class="side-nav-exit" onclick="CloseSideNav()"><i id="close-side-nav-object" class="fa-solid fa-xmark"></i></a>
+        <div class="side-nav-header">
 
-        <div class="side-nav-title">
-            <h1>POKEMON GENERATIONS</h1>
+            <a href="" id="close-side-nav" class="header-exit" onclick="CloseSideNav()"><i id="close-side-nav-object" class="fa-solid fa-xmark"></i></a>
+
+            <div class="header-title">
+                <h1>POKEMON GENERATIONS</h1>
+            </div>
+
         </div>
 
         
-        <div class="generation-container">
+        <div class="generation-buttons-container" id="generation-container">
 
-            <div class="generation-1"><img src="imgs/backgrounds/generations/generation_01.jpg"></div>
-            <div class="generation-2"><img src="imgs/backgrounds/generations/generation_02.jpg"></div>
-            <div class="generation-3"><img src="imgs/backgrounds/generations/generation_03.jpg"></div>
-            <div class="generation-4"><img src="imgs/backgrounds/generations/generation_04.jpg"></div>
-            <div class="generation-5"><img src="imgs/backgrounds/generations/generation_05.jpg"></div>
-            <div class="generation-6"><img src="imgs/backgrounds/generations/generation_06.jpg"></div>
-            <div class="generation-7"><img src="imgs/backgrounds/generations/generation_07.jpg"></div>
-            <div class="generation-8"><img src="imgs/backgrounds/generations/generation_08.jpg"></div>
+            <a href="generation.html" id="generation-01" class="generation-buttons" onclick="GetPokemon('1', '150', '01')"></a>
+            <a href="generation.html" id="generation-02" class="generation-buttons" onclick="GetPokemon('152', '226', '02')"></a>
+            <a href="generation.html" id="generation-03" class="generation-buttons" onclick="GetPokemon('252', '376', '03')"></a>
+            <a href="generation.html" id="generation-04" class="generation-buttons" onclick="GetPokemon('387', '473', '04')"></a>
+            <a href="generation.html" id="generation-05" class="generation-buttons" onclick="GetPokemon('494', '620', '05')"></a>
+            <a href="generation.html" id="generation-06" class="generation-buttons" onclick="GetPokemon('650', '697', '06')"></a>
+            <a href="generation.html" id="generation-07" class="generation-buttons" onclick="GetPokemon('722', '770', '07')"></a>
+            <a href="generation.html" id="generation-08" class="generation-buttons" onclick="GetPokemon('810', '858', '08')"></a>
 
         </div>
 
@@ -38,30 +45,44 @@
     </div>
 
 
+
+    <!-- HEADER SECTION -->
+
     <header>
 
-        <div class="menuBar">
-            <img class="pokedexLogo" src="imgs/logo/pokeball.png">
-            <a class="sideNavButton" onclick="OpenSideNav()"><i class="fa-solid fa-bars fa-2x"></i></a>
+        <div class="header-menu">
+            <img class="pokedex-logo" src="imgs/logo/pokeball.png">
+            <a href="#" class="side-nav-button" onclick="OpenSideNav()"><i class="fa-solid fa-bars fa-2x"></i></a>
         </div>
 
-        <div class="mainImages">
+        <div class="header-content">
 
-            <div class="main-text">
+            <div class="header-contacts">
+                <a href="https://www.youtube.com/channel/UCjUBsUWjcN_cm1vOtnWLQCQ"> <i class="fa-brands fa-youtube"></i> </a>
+                <a href="https://www.linkedin.com/in/kayky-de-souza-dias-514a431bb/"> <i class="fa-brands fa-linkedin"></i> </a>
+                <a href="https://github.com/KaykyDeSouzaDias"> <i class="fa-brands fa-github"></i> </a>
+            </div>
 
-                <div>
-                    <h1>POKEDEX</h1>
-                </div>
+            <div class="header-text">
+
+                <h1>Choose your favorite <br>
+                    pokemon and join <br>
+                    the battle!
+                </h1>
+
+                <label>Explore all pokemons generations and <br>
+                    get all the informations about them to be <br>
+                    prepared for the battle!
+                </label>
+
+                <a href="#about" class="header-text-button">Get Started!</a>
+
+                <img class="header-text-owner-logo" src="imgs/Owner/kayky-dias-logo.png">
 
             </div>
 
-            <div class="continueOrChangeImage">
-                <!--<a class="continueArrow"><i class="fa-solid fa-angle-down fa-4x"></i></a>-->
-                <ul class="changeMainImage">
-                    <li> <a><i class="fa-regular fa-circle fa-1x"></i></a> </li>
-                    <li> <a><i class="fa-regular fa-circle fa-1x"></i></a> </li>
-                    <li> <a><i class="fa-regular fa-circle fa-1x"></i></a> </li>
-                </ul>
+            <div class="header-image">
+                <img src="imgs/backgrounds/main-screen/rayquaza.svg" alt="">
             </div>
 
         </div>
@@ -69,58 +90,58 @@
     </header>
 
 
-    <section class="aboutSection">
+    
+    <!-- ABOUT SECTION -->
 
-        <div class="row">
+    <section id="about" class="about-section">
 
-            <div class="arceus"></div>
+        <div class="about-row">
 
-            <div class="col content-col">
-                <h1>ABOUT THE PROJECT</h1>
+            <div class="arceus">
+                <img src="imgs/backgrounds/main-page/arceus.png" alt="">
+            </div>
+
+            <div class="about-content">
+                <h3>About the project</h3>
+                <h1>A Pokedex Website</h1>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam quis tortor diam. Maecenas eleifend, elit vitae ornare posuere, nunc felis lacinia tellus, id suscipit est nulla id quam. Nullam sed velit odio.
                     Nullam in diam eu tellus mollis luctus. Curabitur et purus vitae ipsum aliquet dignissim. Pellentesque eu ultrices arcu. Nullam et nunc nec ligula luctus hendrerit sit amet non metus. Maecenas vitae nulla sed massa tristique
                     aliquam. Aliquam sagittis consectetur magna, quis mattis odio imperdiet id. Nullam eleifend leo et justo gravida, pellentesque placerat erat tristique. Quisque ut laoreet lacus, nec lacinia lectus. Pellentesque lobortis ex congue,
-                    convallis tortor vel, consequat purus. Donec id mauris vel leo tempus semper in id sem. Quisque augue mauris, gravida ut risus nec, porttitor commodo ante. Sed hendrerit sit amet nisi et pretium.</p>
+                    convallis tortor vel, consequat purus. Donec id mauris vel leo tempus semper in id sem. Quisque augue mauris, gravida ut risus nec, porttitor commodo ante. Sed hendrerit sit amet nisi et pretium.
+                </p>
             </div>
 
         </div>
 
     </section>
 
-    <section class="technologiesSection">
 
-        <div class="row">
 
-            <div class="col content-col">
-                <h1>TECHNOLOGIES</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam quis tortor diam. Maecenas eleifend, elit vitae ornare posuere, nunc felis lacinia tellus, id suscipit est nulla id quam. Nullam sed velit odio.
-                    Nullam in diam eu tellus mollis luctus. Curabitur et purus vitae ipsum aliquet dignissim. Pellentesque eu ultrices arcu. Nullam et nunc nec ligula luctus hendrerit sit amet non metus. Maecenas vitae nulla sed massa tristique
-                    aliquam. Aliquam sagittis consectetur magna, quis mattis odio imperdiet id. Nullam eleifend leo et justo gravida, pellentesque placerat erat tristique. Quisque ut laoreet lacus, nec lacinia lectus. Pellentesque lobortis ex congue,
-                    convallis tortor vel, consequat purus. Donec id mauris vel leo tempus semper in id sem. Quisque augue mauris, gravida ut risus nec, porttitor commodo ante. Sed hendrerit sit amet nisi et pretium.</p>
-            </div>
+    <!-- TECHNOLOGIES SECTION -->
 
-            <div class="charizard"></div>
+    <section class="tech-section">
 
+        <div class="tech-content">
+            <h3>Technologies</h3>
+            <h1>What was used?</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam quis tortor diam. Maecenas eleifend, elit vitae ornare posuere, nunc felis lacinia tellus, id suscipit est nulla id quam. Nullam sed velit odio.
+                Nullam in diam eu tellus mollis luctus. Curabitur et purus vitae ipsum aliquet dignissim. Pellentesque eu ultrices arcu. Nullam et nunc nec ligula luctus hendrerit sit amet non metus. Maecenas vitae nulla sed massa tristique
+                aliquam. Aliquam sagittis consectetur magna, quis mattis odio imperdiet id. Nullam eleifend leo et justo gravida, pellentesque placerat erat tristique. Quisque ut laoreet lacus, nec lacinia lectus. Pellentesque lobortis ex congue,
+                convallis tortor vel, consequat purus. Donec id mauris vel leo tempus semper in id sem. Quisque augue mauris, gravida ut risus nec, porttitor commodo ante. Sed hendrerit sit amet nisi et pretium.
+            </p>
         </div>
 
-    </section>
-
-    <section class="contact-container">
-
-        <h1 class="contact-title">CONTACTS</h1>
-
-        <div class="contact-content">
-
-            <a><i class="fa-brands fa-youtube"></i></a>
-            <a><i class="fa-brands fa-linkedin"></i></a>
-            <a><i class="fa-brands fa-github"></i></a>
-
+        <div class="tech-technologies">
+            <i class="fa-brands fa-html5 fa-2x"></i>
+            <i class="fa-brands fa-css3-alt fa-2x"></i>
+            <i class="fa-brands fa-js fa-2x"></i>
         </div>
 
     </section>
 
 
 
+    <script src="/src/js/side-nav-main-screen.js"></script>
     <script src="main.js"></script>
     
 </body>
