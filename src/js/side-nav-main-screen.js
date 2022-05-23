@@ -1,9 +1,8 @@
-
-
 function OpenSideNav() {
     document.getElementById("my-side-nav").style.width = "100%";
     document.querySelector("body").style.overflow = "hidden";
 }
+
 function CloseSideNav() {
     document.getElementById("my-side-nav").style.width = "0";
 }

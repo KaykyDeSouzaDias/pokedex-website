@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Raleway:wght@400;500;700;800;900&display=swap');
+
+
+
+
+
+.pokemon-details-container {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    background-color: #292929;
+}
+
+
+/* .details {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    overflow-y: auto;
+} */
+
+
+.main-container {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    position: relative;
+}
+
+.details-name {
+    font-family: "Lato";
+    font-weight: 900;
+    font-size: 80px;
+
+    text-transform: uppercase;
+
+    margin-left: 40;
+    margin-top: 40;
+
+    color: #E9E9E9;
+}
+
+.details-type {
+    font-family: "Lato";
+    font-weight: 900;
+    font-size: 20px;
+
+    text-transform: uppercase;
+
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+
+    padding: 10;
+    margin-left: 40;
+    margin-bottom: 20;
+    margin-top: 20;
+
+    border-radius: 30px;
+
+    color: white;
+    background-color: #141A1F;
+}
+
+.details-type-image {
+    width: 20px;
+    height: 20px;
+
+    margin-right: 10;
+}
+
+.details-info {
+    width: 100%;
+    height: 100%;
+
+    padding: 40;
+}
+
+.details-stats-info {
+    width: 50%;
+
+    font-family: "Lato";
+    font-weight: 900;
+    font-size: 20px;
+
+    text-transform: uppercase;
+
+    display: inline-block;
+    align-items: center;
+
+    padding: 20;
+    margin: 10;
+
+    border-radius: 10px;
+
+    color: #E9E9E9;
+    background-color: #141A1F;
+}
+
+.stats-info {
+    display: flex;
+    flex-direction: row;
+
+    position: relative;
+}
+
+.base-stats-divider {
+    border: 0;
+    border-top: 1px solid #E9E9E9;
+
+    margin-top: 10;
+    margin-bottom: 10;
+}
+
+.base-stats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#stats-number {
+    position: absolute;
+    right: 0;
+}
+
+
+
+.informations-container {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+}
+
+.details-id {
+    font-family: "Lato";
+    font-weight: 900;
+    font-size: 300px;
+
+    position: absolute;
+    top: 40;
+
+    color: #E9E9E9;
+}
+
+.details-image {
+    width: 800px;
+    height: 800px;
+
+    position: absolute;
+    z-index: 1;
+
+    align-self: flex-start;
+}
