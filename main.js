@@ -1,6 +1,3 @@
-// import * as ee from "./src/js/side-nav-main-screen";
-
-
 const typeIcons = {
     bug: "imgs/pokemon-type-icons/bug.svg",
     dark: "imgs/pokemon-type-icons/dark.svg",
@@ -66,6 +63,8 @@ function SetGenerationTitle() {
 }
 
 SetGenerationTitle();
+
+// GET POKEMON LIST
 
 const promises = [];
 const pokemonResults = [];
@@ -162,9 +161,11 @@ function GetColorTypes(pokemons) {
     SetTypeVisualization(pokemons);
 }
 
+// GET POKEMON DETAILS
+
 const selectedPokemonPromise = [];
 
-function buu(index) {
+function GetPokemonDetails(index) {
     const selectedPokemonUrl = `https://pokeapi.co/api/v2/pokemon/${index}`;
     selectedPokemonPromise.push(
         fetch(selectedPokemonUrl).then((res) => res.json())
@@ -213,6 +214,7 @@ function DetailsSecType(pokemon) {
         ` : ``
 }
 
+// DISPLAY POKEMON DETAILS
 
 function DisplayPokemonDetails(pokemon) {
     GetIconTypes(pokemon);
@@ -254,7 +256,7 @@ function httl(ms) {
     ulsl.innerHTML = ms;
 }
 
-/* DISPLAY */
+/* DISPLAY POKEMON LIST */
 
 const DisplayPokemon = (pokemon) => {
     GetIconTypes(pokemon);
@@ -263,7 +265,7 @@ const DisplayPokemon = (pokemon) => {
     return `
     <hr class="pokemon-card-divider">
         <li class="pokemon-card">
-            <button class="card-button" id="${pokemon.id}" onclick="buu(this.id)">
+            <button class="card-button" id="${pokemon.id}" onclick="GetPokemonDetails(this.id)">
                 <img class="card-image" alt="${pokemon.name}" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png">
                 <div class="card-content">
                     <p class="card-id">#${pokemon.id.toString().padStart(3,'0')}</p>

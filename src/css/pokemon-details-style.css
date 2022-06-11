@@ -18,20 +18,6 @@
     background-color: #292929;
 }
 
-
-/* .details {
-    width: 100%;
-    height: 100%;
-
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-
-    overflow-y: auto;
-} */
-
-
 .main-container {
     width: 100%;
     height: 100%;
@@ -42,6 +28,46 @@
 
     position: relative;
 }
+
+/* RIGHT SIDE SECTION */
+
+.informations-container {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+}
+
+.details-id {
+    font-family: "Lato";
+    font-weight: 900;
+    font-size: 300px;
+
+    position: absolute;
+    top: 40;
+
+    color: #E9E9E9;
+}
+
+.details-image {
+    width: 800px;
+    height: 800px;
+
+    position: absolute;
+    z-index: 1;
+
+    align-self: flex-start;
+}
+
+
+/* LEFT SIDE SECTION */
+
+/* LEFT SIDE - HEADER */
 
 .details-name {
     font-family: "Lato";
@@ -84,6 +110,8 @@
 
     margin-right: 10;
 }
+
+/* LEFT SIDE - BODY */
 
 .details-info {
     width: 100%;
@@ -137,39 +165,4 @@
 #stats-number {
     position: absolute;
     right: 0;
-}
-
-
-
-.informations-container {
-    width: 100%;
-    height: 100%;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    position: relative;
-}
-
-.details-id {
-    font-family: "Lato";
-    font-weight: 900;
-    font-size: 300px;
-
-    position: absolute;
-    top: 40;
-
-    color: #E9E9E9;
-}
-
-.details-image {
-    width: 800px;
-    height: 800px;
-
-    position: absolute;
-    z-index: 1;
-
-    align-self: flex-start;
 }
