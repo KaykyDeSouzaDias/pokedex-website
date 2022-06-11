@@ -6,91 +6,243 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <script src="https://kit.fontawesome.com/0fb81c7629.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
 
     <title>Pokedex</title>
+
+    <script>
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    </script>
+
 </head>
 
 <body>
-    <!-- SIDE NAV SECTION -->
 
-    <div id="my-side-nav" class="side-nav">
-        <div class="side-nav-header">
-            <a href="" id="close-side-nav" class="header-exit" onclick="CloseSideNav()"><i id="close-side-nav-object"
-                    class="fa-solid fa-xmark"></i></a>
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <symbol id="bootstrap" viewBox="0 0 118 94">
+            <title>Bootstrap</title>
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 5.396-10.624 10.943-11.153v-5.972c-5.547-.529-8.934-4.649-10.943-11.153-2.002-6.484-2.28-14.437-2.066-20.577C105.214 5.894 100.233 0 93.5 0H24.508zM80 57.863C80 66.663 73.436 72 62.543 72H44a2 2 0 01-2-2V24a2 2 0 012-2h18.437c9.083 0 15.044 4.92 15.044 12.474 0 5.302-4.01 10.049-9.119 10.88v.277C75.317 46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 0-5.406-3.903-8.178-11.425-8.178H49.948z">
+            </path>
+        </symbol>
+        <symbol id="javascript" viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+                d="M14 4.5V14a2 2 0 0 1-2 2H8v-1h4a1 1 0 0 0 1-1V4.5h-2A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v9H2V2a2 2 0 0 1 2-2h5.5L14 4.5ZM3.186 15.29a1.176 1.176 0 0 1-.111-.449h.765a.578.578 0 0 0 .255.384c.07.049.153.087.249.114.095.028.202.041.319.041.164 0 .302-.023.413-.07a.559.559 0 0 0 .255-.193.507.507 0 0 0 .085-.29.387.387 0 0 0-.153-.326c-.101-.08-.255-.144-.462-.193l-.619-.143a1.72 1.72 0 0 1-.539-.214 1.001 1.001 0 0 1-.351-.367 1.068 1.068 0 0 1-.123-.524c0-.244.063-.457.19-.639.127-.181.303-.322.528-.422.224-.1.483-.149.776-.149.305 0 .564.05.78.152.216.102.383.239.5.41.12.17.186.359.2.566h-.75a.56.56 0 0 0-.12-.258.624.624 0 0 0-.247-.181.923.923 0 0 0-.369-.068c-.217 0-.388.05-.513.152a.472.472 0 0 0-.184.384c0 .121.048.22.143.3a.97.97 0 0 0 .405.175l.62.143c.218.05.406.12.566.211.16.09.285.21.375.358.09.148.135.335.135.56 0 .247-.063.466-.188.656a1.216 1.216 0 0 1-.539.439c-.234.105-.52.158-.858.158-.254 0-.476-.03-.665-.09a1.404 1.404 0 0 1-.478-.252 1.13 1.13 0 0 1-.29-.375Zm-3.104-.033A1.32 1.32 0 0 1 0 14.791h.765a.576.576 0 0 0 .073.27.499.499 0 0 0 .454.246c.19 0 .33-.055.422-.164.092-.11.138-.265.138-.466v-2.745h.79v2.725c0 .44-.119.774-.357 1.005-.236.23-.564.345-.984.345a1.59 1.59 0 0 1-.569-.094 1.145 1.145 0 0 1-.407-.266 1.14 1.14 0 0 1-.243-.39Z" />
+        </symbol>
+        <symbol id="html" viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+                d="M14 4.5V11h-1V4.5h-2A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v9H2V2a2 2 0 0 1 2-2h5.5L14 4.5Zm-9.736 7.35v3.999h-.791v-1.714H1.79v1.714H1V11.85h.791v1.626h1.682V11.85h.79Zm2.251.662v3.337h-.794v-3.337H4.588v-.662h3.064v.662H6.515Zm2.176 3.337v-2.66h.038l.952 2.159h.516l.946-2.16h.038v2.661h.715V11.85h-.8l-1.14 2.596H9.93L8.79 11.85h-.805v3.999h.706Zm4.71-.674h1.696v.674H12.61V11.85h.79v3.325Z" />
+        </symbol>
+        <symbol id="css" viewBox="0 0 16 16">
+            <path
+                d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm15 2h-4v3h4V4zm0 4h-4v3h4V8zm0 4h-4v3h3a1 1 0 0 0 1-1v-2zm-5 3v-3H6v3h4zm-5 0v-3H1v2a1 1 0 0 0 1 1h3zm-4-4h4V8H1v3zm0-4h4V4H1v3zm5-3v3h4V4H6zm4 4H6v3h4V8z" />
+        </symbol>
+        <symbol id="git" viewBox="0 0 16 16">
+            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+            <path fill-rule="evenodd"
+                d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+        </symbol>
+        <symbol id="github" viewBox="0 0 16 16">
+            <path
+                d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z" />
+        </symbol>
+        <symbol id="figma" viewBox="0 0 16 16">
+            <path
+                d="M15.852 8.981h-4.588V0h4.588c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.491-4.49 4.491zM12.735 7.51h3.117c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019h-3.117V7.51zm0 1.471H8.148c-2.476 0-4.49-2.014-4.49-4.49S5.672 0 8.148 0h4.588v8.981zm-4.587-7.51c-1.665 0-3.019 1.355-3.019 3.019s1.354 3.02 3.019 3.02h3.117V1.471H8.148zm4.587 15.019H8.148c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h4.588v8.98zM8.148 8.981c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h3.117V8.981H8.148zM8.172 24c-2.489 0-4.515-2.014-4.515-4.49s2.014-4.49 4.49-4.49h4.588v4.441c0 2.503-2.047 4.539-4.563 4.539zm-.024-7.51a3.023 3.023 0 0 0-3.019 3.019c0 1.665 1.365 3.019 3.044 3.019 1.705 0 3.093-1.376 3.093-3.068v-2.97H8.148zm7.704 0h-.098c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h.098c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.49-4.49 4.49zm-.097-7.509c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h.098c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019h-.098z" />
+        </symbol>
+        <symbol id="calendar3" viewBox="0 0 16 16">
+            <path
+                d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857V3.857z" />
+            <path
+                d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+        </symbol>
+        <symbol id="chat-quote-fill" viewBox="0 0 16 16">
+            <path
+                d="M16 8c0 3.866-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7zM7.194 6.766a1.688 1.688 0 0 0-.227-.272 1.467 1.467 0 0 0-.469-.324l-.008-.004A1.785 1.785 0 0 0 5.734 6C4.776 6 4 6.746 4 7.667c0 .92.776 1.666 1.734 1.666.343 0 .662-.095.931-.26-.137.389-.39.804-.81 1.22a.405.405 0 0 0 .011.59c.173.16.447.155.614-.01 1.334-1.329 1.37-2.758.941-3.706a2.461 2.461 0 0 0-.227-.4zM11 9.073c-.136.389-.39.804-.81 1.22a.405.405 0 0 0 .012.59c.172.16.446.155.613-.01 1.334-1.329 1.37-2.758.942-3.706a2.466 2.466 0 0 0-.228-.4 1.686 1.686 0 0 0-.227-.273 1.466 1.466 0 0 0-.469-.324l-.008-.004A1.785 1.785 0 0 0 10.07 6c-.957 0-1.734.746-1.734 1.667 0 .92.777 1.666 1.734 1.666.343 0 .662-.095.931-.26z" />
+        </symbol>
+        <symbol id="cpu-fill" viewBox="0 0 16 16">
+            <path d="M6.5 6a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z" />
+            <path
+                d="M5.5.5a.5.5 0 0 0-1 0V2A2.5 2.5 0 0 0 2 4.5H.5a.5.5 0 0 0 0 1H2v1H.5a.5.5 0 0 0 0 1H2v1H.5a.5.5 0 0 0 0 1H2v1H.5a.5.5 0 0 0 0 1H2A2.5 2.5 0 0 0 4.5 14v1.5a.5.5 0 0 0 1 0V14h1v1.5a.5.5 0 0 0 1 0V14h1v1.5a.5.5 0 0 0 1 0V14h1v1.5a.5.5 0 0 0 1 0V14a2.5 2.5 0 0 0 2.5-2.5h1.5a.5.5 0 0 0 0-1H14v-1h1.5a.5.5 0 0 0 0-1H14v-1h1.5a.5.5 0 0 0 0-1H14v-1h1.5a.5.5 0 0 0 0-1H14A2.5 2.5 0 0 0 11.5 2V.5a.5.5 0 0 0-1 0V2h-1V.5a.5.5 0 0 0-1 0V2h-1V.5a.5.5 0 0 0-1 0V2h-1V.5zm1 4.5h3A1.5 1.5 0 0 1 11 6.5v3A1.5 1.5 0 0 1 9.5 11h-3A1.5 1.5 0 0 1 5 9.5v-3A1.5 1.5 0 0 1 6.5 5z" />
+        </symbol>
+        <symbol id="gear-fill" viewBox="0 0 16 16">
+            <path
+                d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z" />
+        </symbol>
+        <symbol id="speedometer" viewBox="0 0 16 16">
+            <path
+                d="M8 2a.5.5 0 0 1 .5.5V4a.5.5 0 0 1-1 0V2.5A.5.5 0 0 1 8 2zM3.732 3.732a.5.5 0 0 1 .707 0l.915.914a.5.5 0 1 1-.708.708l-.914-.915a.5.5 0 0 1 0-.707zM2 8a.5.5 0 0 1 .5-.5h1.586a.5.5 0 0 1 0 1H2.5A.5.5 0 0 1 2 8zm9.5 0a.5.5 0 0 1 .5-.5h1.5a.5.5 0 0 1 0 1H12a.5.5 0 0 1-.5-.5zm.754-4.246a.389.389 0 0 0-.527-.02L7.547 7.31A.91.91 0 1 0 8.85 8.569l3.434-4.297a.389.389 0 0 0-.029-.518z" />
+            <path fill-rule="evenodd"
+                d="M6.664 15.889A8 8 0 1 1 9.336.11a8 8 0 0 1-2.672 15.78zm-4.665-4.283A11.945 11.945 0 0 1 8 10c2.186 0 4.236.585 6.001 1.606a7 7 0 1 0-12.002 0z" />
+        </symbol>
+        <symbol id="toggles2" viewBox="0 0 16 16">
+            <path d="M9.465 10H12a2 2 0 1 1 0 4H9.465c.34-.588.535-1.271.535-2 0-.729-.195-1.412-.535-2z" />
+            <path
+                d="M6 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 1a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm.535-10a3.975 3.975 0 0 1-.409-1H4a1 1 0 0 1 0-2h2.126c.091-.355.23-.69.41-1H4a2 2 0 1 0 0 4h2.535z" />
+            <path d="M14 4a4 4 0 1 1-8 0 4 4 0 0 1 8 0z" />
+        </symbol>
+        <symbol id="tools" viewBox="0 0 16 16">
+            <path
+                d="M1 0L0 1l2.2 3.081a1 1 0 0 0 .815.419h.07a1 1 0 0 1 .708.293l2.675 2.675-2.617 2.654A3.003 3.003 0 0 0 0 13a3 3 0 1 0 5.878-.851l2.654-2.617.968.968-.305.914a1 1 0 0 0 .242 1.023l3.356 3.356a1 1 0 0 0 1.414 0l1.586-1.586a1 1 0 0 0 0-1.414l-3.356-3.356a1 1 0 0 0-1.023-.242L10.5 9.5l-.96-.96 2.68-2.643A3.005 3.005 0 0 0 16 3c0-.269-.035-.53-.102-.777l-2.14 2.141L12 4l-.364-1.757L13.777.102a3 3 0 0 0-3.675 3.68L7.462 6.46 4.793 3.793a1 1 0 0 1-.293-.707v-.071a1 1 0 0 0-.419-.814L1 0zm9.646 10.646a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708zM3 11l.471.242.529.026.287.445.445.287.026.529L5 13l-.242.471-.026.529-.445.287-.287.445-.529.026L3 15l-.471-.242L2 14.732l-.287-.445L1.268 14l-.026-.529L1 13l.242-.471.026-.529.445-.287.287-.445.529-.026L3 11z" />
+        </symbol>
+        <symbol id="chevron-right" viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+        </symbol>
+        <symbol id="geo-fill" viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+                d="M4 4a4 4 0 1 1 4.5 3.969V13.5a.5.5 0 0 1-1 0V7.97A4 4 0 0 1 4 3.999zm2.493 8.574a.5.5 0 0 1-.411.575c-.712.118-1.28.295-1.655.493a1.319 1.319 0 0 0-.37.265.301.301 0 0 0-.057.09V14l.002.008a.147.147 0 0 0 .016.033.617.617 0 0 0 .145.15c.165.13.435.27.813.395.751.25 1.82.414 3.024.414s2.273-.163 3.024-.414c.378-.126.648-.265.813-.395a.619.619 0 0 0 .146-.15.148.148 0 0 0 .015-.033L12 14v-.004a.301.301 0 0 0-.057-.09 1.318 1.318 0 0 0-.37-.264c-.376-.198-.943-.375-1.655-.493a.5.5 0 1 1 .164-.986c.77.127 1.452.328 1.957.594C12.5 13 13 13.4 13 14c0 .426-.26.752-.544.977-.29.228-.68.413-1.116.558-.878.293-2.059.465-3.34.465-1.281 0-2.462-.172-3.34-.465-.436-.145-.826-.33-1.116-.558C3.26 14.752 3 14.426 3 14c0-.599.5-1 .961-1.243.505-.266 1.187-.467 1.957-.594a.5.5 0 0 1 .575.411z" />
+        </symbol>
+    </svg>
 
-            <div class="header-title">
-                <h1>POKEMON GENERATIONS</h1>
+
+
+    <header>
+
+        <main style="
+            background-color: #292929;
+            height: 100vh;
+        ">
+            <nav class="navbar navbar-dark bg-dark" aria-label="Dark offcanvas navbar">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#"><img src="imgs/logo/pokeball.png"
+                            class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="50" height="50"
+                            loading="lazy" />
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+            </nav>
+
+            <div class="container-fluid col-xxl-10 px-4 py-5">
+                <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+                    <div class="col-10 col-sm-8 col-lg-6">
+                        <img src="imgs/backgrounds/main-screen/rayquaza.svg" class="d-block mx-lg-auto img-fluid"
+                            alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+                    </div>
+                    <div class="col-lg-6">
+                        <h1 class="display-5 text-white fw-bold lh-1 mb-3">Choose your favorite pokemon and join the
+                            battle!</h1>
+                        <p class="lead text-white-50">Explore through all generations and get informations
+                            about the pokemons to be
+                            prepared for the battle!</p>
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                            <a href="#aboutSection" class="btn btn-outline-light btn-lg px-4 me-md-2" type="button">Get
+                                Started</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
 
-        <div class="generation-buttons-container" id="generation-container">
-            <a href="generation.html" id="generation-01" class="generation-buttons"
-                onclick="GetPokemon('1', '150', '01')"></a>
-            <a href="generation.html" id="generation-02" class="generation-buttons"
-                onclick="GetPokemon('152', '226', '02')"></a>
-            <a href="generation.html" id="generation-03" class="generation-buttons"
-                onclick="GetPokemon('252', '376', '03')"></a>
-            <a href="generation.html" id="generation-04" class="generation-buttons"
-                onclick="GetPokemon('387', '473', '04')"></a>
-            <a href="generation.html" id="generation-05" class="generation-buttons"
-                onclick="GetPokemon('494', '620', '05')"></a>
-            <a href="generation.html" id="generation-06" class="generation-buttons"
-                onclick="GetPokemon('650', '697', '06')"></a>
-            <a href="generation.html" id="generation-07" class="generation-buttons"
-                onclick="GetPokemon('722', '770', '07')"></a>
-            <a href="generation.html" id="generation-08" class="generation-buttons"
-                onclick="GetPokemon('810', '858', '08')"></a>
+            <!-- <div class="container my-5">
+                <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
+                    <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+                        <h1 class="display-4 fw-bold lh-1">Choose your favorite pokemon and join the
+                            battle!</h1>
+                        <p class="lead">Explore all pokemons generations and get all the informations
+                            about them to be
+                            prepared for the battle!</p>
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
+                            <button type="button" class="btn btn-primary btn-lg px-4 me-md-2 fw-bold">Get
+                                Started</button>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg">
+                        <img class="rounded-lg-3" src="imgs/logo/pokeball.png" alt="" width="720">
+                    </div>
+                    <img class="col-xxl-3 offset-lg-1 p-0 overflow-hidden" src="imgs/logo/pokeball.png" alt="">
+                    <div class="col-lg-6 offset-lg-1 p-0 overflow-hidden shadow-lg">
+                        <img class="img" src="imgs/backgrounds/main-screen/rayquaza.jpg" alt="" width="1000">
+                    </div>
+                </div>
+            </div> -->
+
+            <!-- <main>
+                <div class="px-4 pt-5 text-center border-bottom">
+                    <h1 class="display-4 text-gray fw-bold">Choose your favorite pokemon and join the
+                        battle!</h1>
+                    <div class="col-lg-6 mx-auto">
+                        <p class="lead text-gray-50 mb-4">Explore all pokemons generations and get all the informations
+                            about them to be
+                            prepared for the battle!</p>
+                        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
+                            <button type="button" class="btn btn-light btn-lg px-4 me-sm-3">Get Started</button>
+                        </div>
+                    </div>
+                    <div class="overflow-hidden" style="max-height: 30vh;">
+                        <div class="container px-5">
+                            <img src="imgs/backgrounds/main-screen/rayquaza.jpg"
+                                class="img-fluid border rounded-3 shadow-lg mb-4" alt="Example image" width="700"
+                                height="500" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </main> -->
+
+            <!-- <main>
+                <div class="container-fluid col-xxl-10 px-4 py-5">
+                    <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+                        <div class="col-10 col-sm-8 col-lg-6">
+                            <img src="imgs/backgrounds/main-screen/rayquaza.jpg"
+                                class="rounded d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="900"
+                                height="700" loading="lazy">
+                        </div>
+                        <div class="col-lg-6">
+                            <h1 class="display-5 fw-bold lh-1 mb-3 text-white">Choose your favorite pokemon and join the
+                                battle!
+                            </h1>
+                            <p class="lead text-white-50">Explore all pokemons generations and get all the informations
+                                about them to be
+                                prepared for the battle!</p>
+                            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                                <button type="button" class="btn btn-light btn-lg px-4 me-md-2">Get Started</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main> -->
+        </main>
+    </header>
+
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel"
+        style="--bs-offcanvas-width: 100%; transition: 0.3s; background-color: #292929;">
+        <button type="button" class="btn-close text-white m-5" data-bs-dismiss="offcanvas" aria-label="Close"><i
+                class="fa-solid fa-xmark fa-2x"></i></button>
+        <div class="offcanvas-header justify-content-center">
+            <h1 class="offcanvas-title text-white" id="offcanvasRightLabel"><strong>POKEMON GENERATIONS</strong>
+            </h1>
+        </div>
+        <div class="offcanvas-body">
+            <div class="generation-buttons-container" id="generation-container">
+                <a href="generation.html" id="generation-01" class="generation-buttons"
+                    onclick="GetPokemon('1', '150', '01')"></a>
+                <a href="generation.html" id="generation-02" class="generation-buttons"
+                    onclick="GetPokemon('152', '226', '02')"></a>
+                <a href="generation.html" id="generation-03" class="generation-buttons"
+                    onclick="GetPokemon('252', '376', '03')"></a>
+                <a href="generation.html" id="generation-04" class="generation-buttons"
+                    onclick="GetPokemon('387', '473', '04')"></a>
+                <a href="generation.html" id="generation-05" class="generation-buttons"
+                    onclick="GetPokemon('494', '620', '05')"></a>
+                <a href="generation.html" id="generation-06" class="generation-buttons"
+                    onclick="GetPokemon('650', '697', '06')"></a>
+                <a href="generation.html" id="generation-07" class="generation-buttons"
+                    onclick="GetPokemon('722', '770', '07')"></a>
+                <a href="generation.html" id="generation-08" class="generation-buttons"
+                    onclick="GetPokemon('810', '858', '08')"></a>
+            </div>
         </div>
     </div>
 
-    <!-- HEADER SECTION -->
 
-    <header>
-        <div class="header-menu">
-            <img class="pokedex-logo" src="imgs/logo/pokeball.png" />
-            <a href="#" class="side-nav-button" onclick="OpenSideNav()"><i class="fa-solid fa-bars fa-2x"></i></a>
-        </div>
-
-        <div class="header-content">
-            <div class="header-contacts">
-                <a href="https://www.youtube.com/channel/UCjUBsUWjcN_cm1vOtnWLQCQ">
-                    <i class="fa-brands fa-youtube"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/kayky-de-souza-dias-514a431bb/">
-                    <i class="fa-brands fa-linkedin"></i>
-                </a>
-                <a href="https://github.com/KaykyDeSouzaDias">
-                    <i class="fa-brands fa-github"></i>
-                </a>
-            </div>
-
-            <div class="header-text">
-                <h1>
-                    Choose your favorite <br />
-                    pokemon and join <br />
-                    the battle!
-                </h1>
-
-                <label>Explore all pokemons generations and <br />
-                    get all the informations about them to be <br />
-                    prepared for the battle!
-                </label>
-
-                <a href="#about" class="header-text-button">Get Started!</a>
-
-                <img class="header-text-owner-logo" src="imgs/Owner/kayky-dias-logo.png" />
-            </div>
-
-            <div class="header-image">
-                <img src="imgs/backgrounds/main-screen/rayquaza.svg" alt="" />
-            </div>
-        </div>
-    </header>
-
-    <!-- ABOUT SECTION -->
-
-    <section id="about" class="about-section">
+    <!-- PAGE BODY -->
+    <!-- <section id="about" class="about-section">
         <div class="about-row">
             <div class="arceus">
                 <img src="imgs/backgrounds/main-page/arceus.png" alt="" />
@@ -100,44 +252,30 @@
                 <h3>About the project</h3>
                 <h1>A Pokedex Website</h1>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam quis
-                    tortor diam. Maecenas eleifend, elit vitae ornare posuere, nunc
-                    felis lacinia tellus, id suscipit est nulla id quam. Nullam sed
-                    velit odio. Nullam in diam eu tellus mollis luctus. Curabitur et
-                    purus vitae ipsum aliquet dignissim. Pellentesque eu ultrices arcu.
-                    Nullam et nunc nec ligula luctus hendrerit sit amet non metus.
-                    Maecenas vitae nulla sed massa tristique aliquam. Aliquam sagittis
-                    consectetur magna, quis mattis odio imperdiet id. Nullam eleifend
-                    leo et justo gravida, pellentesque placerat erat tristique. Quisque
-                    ut laoreet lacus, nec lacinia lectus. Pellentesque lobortis ex
-                    congue, convallis tortor vel, consequat purus. Donec id mauris vel
-                    leo tempus semper in id sem. Quisque augue mauris, gravida ut risus
-                    nec, porttitor commodo ante. Sed hendrerit sit amet nisi et pretium.
+                    Hi! My name is Kayky de Souza Dias and I'm a brazillian Front-End Web/Desktop Developer🌞.
+                    <br>
+                    In this project I bring to you a pokedex website, where you can get some informations about hundreds
+                    of
+                    <br>
+                    pokemons between 8 generations. In this website, I worked with some features like:
                 </p>
+                <br>
+                <ul>
+                    <li>Get all informations about those pokemons using PokéApi</li>
+                    <li>A search bar input system</li>
+                    <li>A side menu in pokedex page</li>
+                </ul>
             </div>
         </div>
     </section>
-
-    <!-- TECHNOLOGIES SECTION -->
 
     <section class="tech-section">
         <div class="tech-content">
             <h3>Technologies</h3>
             <h1>What was used?</h1>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam quis
-                tortor diam. Maecenas eleifend, elit vitae ornare posuere, nunc felis
-                lacinia tellus, id suscipit est nulla id quam. Nullam sed velit odio.
-                Nullam in diam eu tellus mollis luctus. Curabitur et purus vitae ipsum
-                aliquet dignissim. Pellentesque eu ultrices arcu. Nullam et nunc nec
-                ligula luctus hendrerit sit amet non metus. Maecenas vitae nulla sed
-                massa tristique aliquam. Aliquam sagittis consectetur magna, quis
-                mattis odio imperdiet id. Nullam eleifend leo et justo gravida,
-                pellentesque placerat erat tristique. Quisque ut laoreet lacus, nec
-                lacinia lectus. Pellentesque lobortis ex congue, convallis tortor vel,
-                consequat purus. Donec id mauris vel leo tempus semper in id sem.
-                Quisque augue mauris, gravida ut risus nec, porttitor commodo ante.
-                Sed hendrerit sit amet nisi et pretium.
+                I was able to make this website with HTML5, CSS3 and JAVASCRIPT. Besides that, It was used GIT, GITHUB,
+                NETLIFY, VS CODE AND FIGMA.
             </p>
         </div>
 
@@ -146,10 +284,233 @@
             <i class="fa-brands fa-css3-alt fa-2x"></i>
             <i class="fa-brands fa-js fa-2x"></i>
         </div>
-    </section>
+    </section> -->
 
-    <script src="/src/js/side-nav-home-page.js"></script>
-    <script src="main.js"></script>
+    <div class="container-fluid py-4" id="aboutSection">
+        <div class="container">
+            <div class="p-5 mb-4 bg-light rounded-3">
+                <div class="container-fluid py-5">
+                    <h1 class="display-5 fw-bold">About the project</h1>
+                    <p class="col-md-8 fs-4">Hi! My name is Kayky de Souza Dias and I'm a brazillian Front-End
+                        Web/Desktop Developer🌞. <br>
+                        In this project I bring to you a pokedex website, where you can get some informations about
+                        hundreds
+                        of pokemons between 8 generations.</p>
+                    <a href="https://github.com/KaykyDeSouzaDias/pokedex-website" class="btn btn-outline-dark btn-lg"
+                        type="button">Check out the GitHub project</a>
+                </div>
+            </div>
+
+            <div class="container px-4 py-5" id="custom-cards">
+                <h2 class="pb-2 border-bottom">Technologies used</h2>
+
+                <div class="row row-cols-3 row-cols-lg-3 align-items-stretch g-4 py-5">
+                    <div class="col">
+                        <div class="card card-cover h-100 overflow-hidden text-white rounded-4 shadow-lg"
+                            style="background-color: #E34F26;">
+                            <div
+                                class="d-flex flex-column h-100 p-5 pb-3 text-white justify-content-center text-center text-shadow-1">
+                                <h2><i class="fa-brands fa-html5 fa-5x"></i></h2>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card card-cover h-100 overflow-hidden text-white rounded-4 shadow-lg"
+                            style="background-color: #1572B6;">
+                            <div
+                                class="d-flex flex-column h-100 p-5 pb-3 text-white justify-content-center text-center text-shadow-1">
+                                <h2><i class="fa-brands fa-css3-alt fa-5x"></i></h2>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card card-cover h-100 overflow-hidden text-white rounded-4 shadow-lg"
+                            style="background-color: #F7DF1E;">
+                            <div
+                                class="d-flex flex-column h-100 p-5 pb-3 text-center justify-content-center text-shadow-1">
+                                <h2><i class="fa-brands fa-js fa-5x"></i></h2>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card card-cover h-100 overflow-hidden text-white rounded-4 shadow-lg"
+                            style="background-color: #F05032;">
+                            <div
+                                class="d-flex flex-column h-100 p-5 pb-3 text-white justify-content-center text-center text-shadow-1">
+                                <h2><i class="fa-brands fa-git-alt fa-5x"></i></h2>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card card-cover h-100 overflow-hidden text-white rounded-4 shadow-lg"
+                            style="background-color: #181717;">
+                            <div
+                                class="d-flex flex-column h-100 p-5 pb-3 text-white justify-content-center text-center text-shadow-1">
+                                <h2><i class="fa-brands fa-github-square fa-5x"></i></h2>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card card-cover h-100 overflow-hidden text-white rounded-4 shadow-lg"
+                            style="background-color: #F24E1E;">
+                            <div
+                                class="d-flex flex-column h-100 p-5 pb-3 text-center justify-content-center text-shadow-1">
+                                <h2><i class="fa-brands fa-figma fa-5x"></i></h2>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card card-cover h-100 overflow-hidden text-white rounded-4 shadow-lg"
+                            style="background-color: #7E0AF9;">
+                            <div
+                                class="d-flex flex-column h-100 p-5 pb-3 text-white justify-content-center text-center text-shadow-1">
+                                <h2><i class="fa-brands fa-bootstrap fa-5x"></i></h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <br><br><br>
+
+                <div class="row align-items-md-stretch">
+                    <div class="col-md-6">
+                        <div class="h-100 p-5 text-white bg-dark rounded-3">
+                            <h2>Mood-Fi</h2>
+                            <p>Mood-Fi is the best place to relax and listen to a lo-fi live stream. It's a free
+                                software app with 30+ lo-fi live streams between 8 different lo-fi types. Take a break,
+                                relax and be mood, be Mood-Fi.</p>
+                            <a href="https://www.producthunt.com/posts/mood-fi" class="btn btn-outline-light"
+                                type="button">Download now!</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="h-100 p-5 bg-light border rounded-3">
+                            <h2>Steam website redesign</h2>
+                            <p>That's a website clone from Alexandre Misson's steam redesign layout. A mix between HTML
+                                and CSS to develop a website that brings life to the artist's redesign concept.</p>
+                            <a href="https://github.com/KaykyDeSouzaDias/steam-store-redesign-clone"
+                                class="btn btn-outline-secondary" type="button">Check out the project</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="container-fluid" style="
+        background-color: #292929;
+    ">
+        <div class="container px-4 py-5" id="icon-grid">
+            <h2 class="pb-2 text-white border-bottom">About the project</h2>
+
+            <div class="col-lg-10">
+                <p class="lead text-white-50 mb-4">Hi! My name is Kayky de Souza Dias and I'm a brazillian Front-End
+                    Web/Desktop Developer🌞.
+                    In this project I bring to you a pokedex website, where you can get some informations about hundreds
+                    of pokemons between 8 generations. In this website, I worked with some features like:</p>
+            </div>
+
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-5">
+                <div class="col d-flex align-items-start">
+                    <svg class="bi text-muted flex-shrink-0 me-3" width="1.75em" height="1.75em">
+                        <use xlink:href="#javascript" /></svg>
+                    <div>
+                        <h4 class="fw-bold text-white mb-0">Javascript</h4>
+                        <p class="text-white-50">Paragraph of text beneath the heading to explain the heading.</p>
+                    </div>
+                </div>
+                <div class="col d-flex align-items-start">
+                    <svg class="bi text-muted flex-shrink-0 me-3" width="1.75em" height="1.75em">
+                        <use xlink:href="#html" /></svg>
+                    <div>
+                        <h4 class="fw-bold mb-0">HTML 5</h4>
+                        <p>Paragraph of text beneath the heading to explain the heading.</p>
+                    </div>
+                </div>
+                <div class="col d-flex align-items-start">
+                    <svg class="bi text-muted flex-shrink-0 me-3" width="1.75em" height="1.75em">
+                        <use xlink:href="#calendar3" /></svg>
+                    <div>
+                        <h4 class="fw-bold mb-0">CSS 3</h4>
+                        <p>Paragraph of text beneath the heading to explain the heading.</p>
+                    </div>
+                </div>
+                <div class="col d-flex align-items-start">
+                    <svg class="bi text-muted flex-shrink-0 me-3" width="1.75em" height="1.75em">
+                        <use xlink:href="#home" /></svg>
+                    <div>
+                        <h4 class="fw-bold mb-0">GIT</h4>
+                        <p>Paragraph of text beneath the heading to explain the heading.</p>
+                    </div>
+                </div>
+                <div class="col d-flex align-items-start">
+                    <svg class="bi text-muted flex-shrink-0 me-3" width="1.75em" height="1.75em">
+                        <use xlink:href="#speedometer2" /></svg>
+                    <div>
+                        <h4 class="fw-bold mb-0">GITHUB</h4>
+                        <p>Paragraph of text beneath the heading to explain the heading.</p>
+                    </div>
+                </div>
+                <div class="col d-flex align-items-start">
+                    <i class="bi-github" role="img" aria-label="GitHub"></i>
+                    <div>
+                        <h4 class="fw-bold text-white mb-0">Figma</h4>
+                        <p class="text-white-50">Paragraph of text beneath the heading to explain the heading.</p>
+                    </div>
+                </div>
+                <div class="col d-flex align-items-start">
+                    <svg class="bi text-muted flex-shrink-0 me-3" width="1.75em" height="1.75em">
+                        <use xlink:href="#geo-fill" /></svg>
+                    <div>
+                        <h4 class="fw-bold mb-0">Featured title</h4>
+                        <p>Paragraph of text beneath the heading to explain the heading.</p>
+                    </div>
+                </div>
+                <div class="col d-flex align-items-start">
+                    <svg class="bi text-muted flex-shrink-0 me-3" width="1.75em" height="1.75em">
+                        <use xlink:href="#tools" /></svg>
+                    <div>
+                        <h4 class="fw-bold mb-0">Featured title</h4>
+                        <p>Paragraph of text beneath the heading to explain the heading.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+        <div class="container">
+            <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+                <p class="col-md-4 mb-0 text-muted">&copy; 2022 Kayky Dias</p>
+
+                <a href="/"
+                    class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto text-decoration-none">
+                    <img src="imgs/Owner/my-logo.jpg" class="d-block rounded mx-lg-auto img-fluid"
+                        alt="Bootstrap Themes" width="70" height="70" loading="lazy">
+                    <!-- <svg class="bi me-2" width="40" height="32">
+                        <use xlink:href="#bootstrap" /></svg> -->
+                </a>
+
+                <ul class="nav col-md-4 justify-content-end">
+                    <li class="nav-item"><a href="https://www.linkedin.com/in/kayky-de-souza-dias-514a431bb/"
+                            class="nav-link px-2 text-muted"><i class="fa-brands fa-linkedin"></i></a></li>
+                    <li class="nav-item"><a href="https://github.com/KaykyDeSouzaDias"
+                            class="nav-link px-2 text-muted"><i class="fa-brands fa-github"></i></a></li>
+                    <li class="nav-item"><a href="https://www.youtube.com/channel/UCjUBsUWjcN_cm1vOtnWLQCQ"
+                            class="nav-link px-2 text-muted"><i class="fa-brands fa-youtube"></i></a></li>
+                </ul>
+            </footer>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
+        </script>
+        <script src="/src/js/side-nav-home-page.js"></script>
+        <script src="main.js"></script>
 </body>
 
 </html>

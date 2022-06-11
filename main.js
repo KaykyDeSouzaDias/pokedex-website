@@ -243,7 +243,7 @@ function DisplayPokemonDetails(pokemon) {
         </div>
 
         <div class="informations-container">
-            <p class="details-id">#${pokemon.id}</p>
+            <p class="details-id">#${pokemon.id.toString().padStart(3,'0')}</p>
             <img class="details-image" alt="${pokemon.name}" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png">
         </div>
     `;
@@ -266,7 +266,7 @@ const DisplayPokemon = (pokemon) => {
             <button class="card-button" id="${pokemon.id}" onclick="buu(this.id)">
                 <img class="card-image" alt="${pokemon.name}" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png">
                 <div class="card-content">
-                    <p class="card-id">0${pokemon.id}</p>
+                    <p class="card-id">#${pokemon.id.toString().padStart(3,'0')}</p>
                     <h2 class="card-name">${pokemon.name}</h2>
 
                     <div class="card-type">
