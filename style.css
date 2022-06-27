@@ -104,20 +104,41 @@
 }
 
 
+/* REPONSIVITY */
 
-/* RESPONSIVITY */
-/* @media only screen and (max-width:1040px) {
-    .side-nav {
-        flex-direction: column;
+@media only screen and (max-width:600px) {
+    .generation-buttons-container {
+        padding: 50;
     }
 
-    .side-nav-title h1 {
-        font-size: 3vw;
+    .generation-buttons {
+        max-width: 350px;
+        max-height: 150px;
     }
 
-    .generation-container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+    .generation-buttons h1 {
+        font-size: 5rem;
     }
-} */
+
+    .generation-buttons img {
+        max-width: 200;
+        max-height: 200;
+
+        top: -50;
+        right: -50;
+    }
+}
+
+@media only screen and (max-width:360px) {
+    .generation-buttons-container {
+        padding: 15;
+    }
+
+    .generation-buttons img {
+        max-width: 150;
+        max-height: 150;
+
+        top: -25;
+        right: -25;
+    }
+}
