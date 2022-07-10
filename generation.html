@@ -13,6 +13,25 @@
 </head>
 
 <body>
+    <div id="my-side-nav" class="side-nav">
+        <a id="close-side-nav" class="header-exit" onclick="CloseSideNav()"><i id="close-side-nav-object"
+                class="fa-solid fa-xmark"></i></a>
+        <h1 class="generation-title" id="responsive-gen-title"></h1>
+
+        <div class="search-bar">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Search your favorite pokemon..." class="search-bar-input" id="search">
+        </div>
+
+        <div class="pokedex">
+            <ul data-js="responsive-pokedex" class="pokedex-container">
+            </ul>
+        </div>
+
+
+    </div>
+
+    <a class="sideNavButton" onclick="OpenSideNav()"><i class="fa-solid fa-bars fa-2x"></i></a>
 
     <!-- SIDE MENU SECTION -->
 

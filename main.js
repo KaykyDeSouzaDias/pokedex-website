@@ -42,6 +42,14 @@ const typeColors = {
 };
 const mainTypeColors = Object.keys(typeColors);
 
+function OpenSideNav() {
+    document.getElementById("my-side-nav").style.width = "100%";
+}
+
+function CloseSideNav() {
+    document.getElementById("my-side-nav").style.width = "0";
+}
+
 /* STORE POKEMON'S QUANTITY & GENERATION'S NUMBER */
 
 function GetPokemon(offset, limit, generation) {
@@ -59,6 +67,8 @@ const end = parseInt(localStorage.getItem("limitPokemon"));
 
 function SetGenerationTitle() {
     document.getElementById("gen-title").textContent =
+        "Generation " + localStorage.getItem("pokemonGeneration");
+    document.getElementById("responsive-gen-title").textContent =
         "Generation " + localStorage.getItem("pokemonGeneration");
 }
 
@@ -98,6 +108,8 @@ function GetPokemonData(data) {
 function PokemonHTML(pokemons) {
     const ul = document.querySelector('[data-js="pokedex"]');
     ul.innerHTML = pokemons;
+    const ulResponsivity = document.querySelector('[data-js="responsive-pokedex"]');
+    ulResponsivity.innerHTML = pokemons;
 }
 
 /* POKEMON SEARCH FILTER */

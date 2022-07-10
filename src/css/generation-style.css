@@ -205,3 +205,47 @@ body {
     border: 0;
     border-top: 5px solid #231D23;
 }
+
+
+.sideNavButton {
+    display: none;
+    font-size: 5vw;
+    margin-top: 50px;
+    color: white;
+}
+
+.side-nav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    background-color: #292929;
+    overflow-x: hidden;
+    transition: all .5s;
+    padding-top: 60px;
+}
+
+.header-exit {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    color: white;
+}
+
+
+/* RESPONSIVITY */
+
+@media only screen and (max-width:960px) {
+    .side-menu-container {
+        width: 0;
+    }
+
+    .sideNavButton {
+        display: block;
+    }
+
+}
