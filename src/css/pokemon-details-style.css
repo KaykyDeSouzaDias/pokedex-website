@@ -46,7 +46,7 @@
 .details-id {
     font-family: "Lato";
     font-weight: 900;
-    font-size: 300px;
+    font-size: 15vw;
 
     position: absolute;
     top: 40;
@@ -55,8 +55,8 @@
 }
 
 .details-image {
-    width: 800px;
-    height: 800px;
+    width: 100%;
+    height: auto;
 
     position: absolute;
     z-index: 1;
@@ -72,7 +72,7 @@
 .details-name {
     font-family: "Lato";
     font-weight: 900;
-    font-size: 80px;
+    font-size: 6em;
 
     text-transform: uppercase;
 
@@ -109,6 +109,14 @@
     height: 20px;
 
     margin-right: 10;
+}
+
+.responsive-details-id {
+    display: none;
+}
+
+.responsive-details-image {
+    display: none;
 }
 
 /* LEFT SIDE - BODY */
@@ -165,4 +173,114 @@
 #stats-number {
     position: absolute;
     right: 0;
+}
+
+
+/* RESPONSIVITY */
+
+@media only screen and (max-width: 600px) {
+    .details-type-container {
+        width: 100%;
+        height: 50px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .details-type {
+        width: 20%;
+        height: 70%;
+
+        font-size: 2vw;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .details-type+.details-type {
+        margin-left: 10px;
+    }
+
+    .details-type-image {
+        width: 20%;
+        height: fit-content;
+
+        margin-right: 2;
+    }
+}
+
+@media only screen and (max-width:1480px) {
+
+    /*960px*/
+    .pokemon-details-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        position: relative;
+
+        overflow-y: auto;
+    }
+
+    .main-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        z-index: 0;
+    }
+
+    .informations-container {
+        display: none;
+    }
+
+    .responsive-details-id {
+        display: flex;
+
+        font-family: "Lato";
+        font-weight: 900;
+        font-size: 8vw;
+
+        color: #E9E9E9;
+    }
+
+    .responsive-details-image {
+        display: flex;
+        width: 80%;
+        height: fit-content;
+
+        position: none;
+        z-index: 0;
+
+        align-self: center;
+    }
+
+    .details-id {
+        display: none;
+    }
+
+    .details-image {
+        display: none;
+    }
+
+    .details-name {
+        margin-left: 0;
+        margin-top: 0;
+        font-size: 10vw;
+    }
+
+    .details-type {
+        margin-left: 0;
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+
+    .details-stats-info {
+        width: 100%;
+
+        padding: 20;
+        margin: 10;
+    }
 }

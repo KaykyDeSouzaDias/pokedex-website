@@ -234,13 +234,14 @@ function DisplayPokemonDetails(pokemon) {
     return `
         <div class="main-container">
             <h2 class="details-name">${pokemon.name}</h2>
-            <div>
+            <div class="details-type-container">
                 <div class="details-type" style="background-color: ${typeColorVar};">
                     <img class="details-type-image" src="${typesVar}">
                     ${pokemon.types[0].type.name}
                 </div>
                 ${DetailsSecType(pokemon)}
             </div>
+            <p class="responsive-details-id">#${pokemon.id.toString().padStart(3,'0')}</p>
             <div class="details-info">
                 <div class="details-stats-info">
                     <p>BASE STATS</p>
@@ -254,6 +255,7 @@ function DisplayPokemonDetails(pokemon) {
                     ${GetPokemonMeasures(pokemon)}
                 </div>
             </div>
+            <img class="responsive-details-image" alt="${pokemon.name}" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png">
         </div>
 
         <div class="informations-container">
