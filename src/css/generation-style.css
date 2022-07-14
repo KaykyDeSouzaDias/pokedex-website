@@ -221,7 +221,12 @@ body {
     z-index: 3;
     top: 0;
     left: 0;
-    background-color: #292929;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: #141A1F;
     overflow-x: hidden;
     transition: all .5s;
     padding-top: 60px;
@@ -229,8 +234,8 @@ body {
 
 .header-exit {
     position: absolute;
-    top: 0;
-    right: 25px;
+    top: 25;
+    right: 25;
     font-size: 36px;
     margin-left: 50px;
     color: white;
@@ -246,6 +251,10 @@ body {
 
     .sideNavButton {
         display: block;
+    }
+
+    .generation-title {
+        margin-top: 10;
     }
 
 }
