@@ -279,7 +279,7 @@ const DisplayPokemon = (pokemon) => {
     return `
     <hr class="pokemon-card-divider">
         <li class="pokemon-card">
-            <button class="card-button" id="${pokemon.id}" onclick="GetPokemonDetails(this.id)">
+            <button class="card-button" id="${pokemon.id}" onclick="GetPokemonDetails(this.id); CloseSideNav();">
                 <img class="card-image" alt="${pokemon.name}" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png">
                 <div class="card-content">
                     <p class="card-id">#${pokemon.id.toString().padStart(3,'0')}</p>
