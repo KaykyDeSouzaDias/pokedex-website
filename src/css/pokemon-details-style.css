@@ -211,11 +211,17 @@
 
         margin-right: 2;
     }
+
+    .details-info {
+        padding: 10;
+    }
+
+    .details-stats-info {
+        font-size: 5vw;
+    }
 }
 
 @media only screen and (max-width:1480px) {
-
-    /*960px*/
     .pokemon-details-container {
         display: flex;
         flex-direction: column;
