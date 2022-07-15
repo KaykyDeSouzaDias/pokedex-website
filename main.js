@@ -126,6 +126,18 @@ pokemonSearchBar.addEventListener("keyup", (e) => {
     GetPokemonData(filteredPokemons);
 });
 
+const responsivePokemonSearchBar = document.getElementById("responsive-search");
+
+responsivePokemonSearchBar.addEventListener("keyup", (e) => {
+    const searchString = e.target.value.toLowerCase();
+
+    const filteredPokemons = pokemonResults.filter((pokemon) => {
+        return pokemon.name.toLowerCase().startsWith(searchString);
+    });
+
+    GetPokemonData(filteredPokemons);
+});
+
 /* VISUALIZATION LOGIC OF POKEMON TYPES & TYPES' COLOR */
 
 var secondType = ``;
