@@ -14,10 +14,12 @@ body {
     display: flex;
     flex-direction: row;
 
-    background-color: #231D23;
+    background-color: #292929;
 }
 
-
+.details-side-nav-button {
+    display: none;
+}
 
 /* SIDE MENU */
 
@@ -206,14 +208,6 @@ body {
     border-top: 5px solid #231D23;
 }
 
-
-.sideNavButton {
-    display: none;
-    font-size: 5vw;
-    margin-top: 50px;
-    color: white;
-}
-
 .side-nav {
     height: 100%;
     width: 0;
@@ -249,8 +243,26 @@ body {
         width: 0;
     }
 
-    .sideNavButton {
+    .body {
+        background-color: red;
+    }
+
+    .side-nav-button {
         display: block;
+        position: absolute;
+        top: 20;
+        left: 20;
+        font-size: 5vw;
+        color: white;
+    }
+
+    .details-side-nav-button {
+        display: flex;
+        align-self: flex-start;
+        top: 20;
+        left: 20;
+        font-size: 5vw;
+        color: white;
     }
 
     .generation-title {

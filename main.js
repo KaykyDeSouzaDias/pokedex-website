@@ -245,6 +245,7 @@ function DisplayPokemonDetails(pokemon) {
     GetColorTypes(pokemon);
     return `
         <div class="main-container">
+            <a class="details-side-nav-button" onclick="OpenSideNav()"><i class="fa-solid fa-bars fa-2x"></i></a>
             <h2 class="details-name">${pokemon.name}</h2>
             <div class="details-type-container">
                 <div class="details-type" style="background-color: ${typeColorVar};">
