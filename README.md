@@ -9,9 +9,11 @@
 </div>
 
 # About the project
-This website was made with an intention to be a way to users download the windows/linux version of the app <a href="https://github.com/KaykyDeSouzaDias/Mood-Fi">Mood-Fi.</a>
+This website is a project to train my abilities with HTML, CSS, and JAVASCRIPT. In addition to using BOOTSTRAP 5 to practice and know more about the technology.
 
-![GIF-about-the-project](https://user-images.githubusercontent.com/59856984/160289459-40803332-37cd-4e57-bc11-bb231163fe9c.gif)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/59856984/179424700-ea9f3765-f40e-42b3-90ed-8c62c290b551.gif">
+</p>
 
 # Details about the project
 
